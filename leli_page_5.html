@@ -1,0 +1,595 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Manrope:wght@300;400;500;600;700&display=swap');
+
+.leli-wrap *,
+.leli-wrap *::before,
+.leli-wrap *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+.leli-wrap {
+  --navy:      #103B51;
+  --teal:      #24A791;
+  --beige:     #E3E1DA;
+  --cream:     #F5F3EE;
+  --lt-teal:   #D4EDE9;
+  --white:     #FFFFFF;
+  --text:      #0e2430;
+  --text-mid:  #2d4a58;
+  --text-lt:   #5a7a8a;
+  --serif:     'Playfair Display', Georgia, serif;
+  --sans:      'Manrope', system-ui, sans-serif;
+  font-family: var(--sans);
+  font-size: 16px;
+  color: var(--text);
+  line-height: 1.75;
+  background: var(--cream);
+  -webkit-font-smoothing: antialiased;
+}
+
+
+/* ── HERO ── */
+.leli-hero {
+  background: var(--navy);
+  padding: 0;
+  overflow: hidden;
+  position: relative;
+}
+.leli-hero-circle {
+  position: absolute;
+  right: -100px; top: 50%;
+  transform: translateY(-50%);
+  width: 420px; height: 420px;
+  border-radius: 50%;
+  border: 1px solid rgba(36,167,145,0.12);
+  pointer-events: none;
+}
+.leli-hero-circle::before {
+  content: '';
+  position: absolute; inset: 50px;
+  border-radius: 50%;
+  border: 1px solid rgba(36,167,145,0.08);
+}
+.leli-hero-circle::after {
+  content: '';
+  position: absolute; inset: 110px;
+  border-radius: 50%;
+  background: rgba(36,167,145,0.04);
+}
+.leli-hero-body {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 4rem 2.5rem 3.5rem;
+  position: relative;
+  z-index: 2;
+}
+.leli-hero-eyebrow {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--teal);
+  margin-bottom: 1.25rem;
+}
+.leli-hero-title {
+  font-family: var(--serif);
+  font-size: clamp(2.2rem, 5vw, 3.6rem);
+  font-weight: 400;
+  line-height: 1.1;
+  color: #fff;
+  max-width: 600px;
+  margin-bottom: 0.2rem;
+}
+.leli-hero-title-accent {
+  display: block;
+  font-family: var(--serif);
+  font-size: clamp(2.2rem, 5vw, 3.6rem);
+  font-weight: 700;
+  font-style: italic;
+  color: var(--teal);
+  margin-bottom: 2.25rem;
+}
+.leli-hero-rule {
+  width: 56px; height: 3px;
+  background: var(--teal);
+  margin-bottom: 1.75rem;
+}
+.leli-hero-lead {
+  font-size: 18px;
+  font-weight: 300;
+  color: rgba(255,255,255,0.7);
+  max-width: 520px;
+  line-height: 1.8;
+  margin-bottom: 2.25rem;
+}
+.leli-hero-btns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
+}
+.leli-btn {
+  font-family: var(--sans);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.85rem 1.75rem;
+  text-decoration: none;
+  border: 1.5px solid var(--teal);
+  background: var(--teal);
+  color: #fff;
+  transition: all 0.2s;
+  display: inline-block;
+}
+.leli-btn:hover { background: transparent; color: var(--teal); }
+.leli-btn--ghost {
+  background: transparent;
+  color: rgba(255,255,255,0.7);
+  border-color: rgba(255,255,255,0.3);
+}
+.leli-btn--ghost:hover { border-color: var(--teal); color: var(--teal); }
+.leli-teal-bar { height: 4px; background: linear-gradient(90deg, var(--teal), #0D7A69); }
+
+/* ── SECTION DIVIDER ── */
+.leli-sec-div {
+  background: var(--navy);
+  padding: 2.75rem 2.5rem 2.5rem;
+  position: relative;
+  overflow: hidden;
+}
+.leli-sec-div::after {
+  content: '';
+  position: absolute; right: 1.5rem; top: 50%; transform: translateY(-50%);
+  width: 140px; height: 140px; border-radius: 50%;
+  border: 1px solid rgba(36,167,145,0.1); pointer-events: none;
+}
+.leli-sec-div-inner { max-width: 860px; margin: 0 auto; }
+.leli-sec-eyebrow {
+  font-size: 11px; font-weight: 700; letter-spacing: 0.2em;
+  text-transform: uppercase; color: var(--teal); margin-bottom: 0.6rem;
+}
+.leli-sec-title {
+  font-family: var(--serif);
+  font-size: clamp(1.6rem, 3.5vw, 2.3rem);
+  font-weight: 400; color: #fff; line-height: 1.2; margin-bottom: 0.4rem;
+}
+.leli-sec-sub {
+  font-size: 15px; font-weight: 300; font-style: italic;
+  color: rgba(255,255,255,0.45);
+}
+.leli-teal-rule { height: 3px; background: linear-gradient(90deg, var(--teal), transparent); }
+
+/* ── CONTENT ── */
+.leli-content {
+  background: var(--white);
+  padding: 2.5rem 2.5rem 3rem;
+}
+.leli-content-inner { max-width: 860px; margin: 0 auto; }
+
+.leli-content--cream { background: var(--cream); }
+
+/* ── TYPOGRAPHY ── */
+.leli-lede {
+  font-family: var(--serif);
+  font-size: 18px; color: var(--text-mid); line-height: 1.8;
+  border-left: 3px solid var(--teal); padding-left: 1.5rem;
+  margin: 1.75rem 0;
+}
+.leli-h2 {
+  font-family: var(--serif); font-size: 1.55rem; font-weight: 400;
+  color: var(--navy); line-height: 1.25; margin-top: 2.25rem; margin-bottom: 0.65rem;
+  padding-bottom: 0.5rem; border-bottom: 1px solid var(--beige);
+}
+.leli-h3 {
+  font-size: 12px; font-weight: 700; letter-spacing: 0.14em;
+  text-transform: uppercase; color: var(--teal);
+  margin-top: 1.75rem; margin-bottom: 0.5rem;
+}
+.leli-p {
+  font-size: 15px; color: var(--text-mid); line-height: 1.85; margin-bottom: 1rem;
+}
+.leli-p:last-child { margin-bottom: 0; }
+.leli-p em { color: var(--teal); font-style: italic; }
+
+/* ── PULL QUOTE ── */
+.leli-pull {
+  display: grid; grid-template-columns: 4px 1fr; margin: 2rem 0;
+}
+.leli-pull-bar { background: var(--teal); }
+.leli-pull-body { background: var(--navy); padding: 2rem 2rem 2rem 1.75rem; }
+.leli-pull-text {
+  font-family: var(--serif); font-size: clamp(1.1rem,2.2vw,1.35rem);
+  font-style: italic; color: #fff; line-height: 1.6;
+}
+.leli-pull-text strong { color: var(--teal); font-style: normal; }
+
+/* ── CALLOUT ── */
+.leli-callout { display: grid; grid-template-columns: 4px 1fr; margin: 1.75rem 0; }
+.leli-callout-bar { background: var(--teal); }
+.leli-callout-body { background: var(--cream); padding: 1.5rem 1.75rem; }
+.leli-callout-title {
+  font-size: 12px; font-weight: 700; letter-spacing: 0.12em;
+  text-transform: uppercase; color: var(--navy); margin-bottom: 0.5rem;
+}
+.leli-callout-text { font-size: 14px; color: var(--text-mid); line-height: 1.8; }
+
+/* ── TWO COL ── */
+.leli-two-col {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 1px; background: var(--beige); border: 1px solid var(--beige);
+  margin: 1.75rem 0;
+}
+.leli-col { background: var(--cream); padding: 1.75rem; }
+.leli-col--teal { background: var(--lt-teal); }
+.leli-col-label {
+  font-size: 11px; font-weight: 700; letter-spacing: 0.18em;
+  text-transform: uppercase; color: var(--teal); margin-bottom: 0.4rem;
+}
+.leli-col-title {
+  font-family: var(--serif); font-size: 1.1rem; font-weight: 400;
+  color: var(--navy); margin-bottom: 0.6rem; line-height: 1.3;
+}
+.leli-col-body { font-size: 14px; color: var(--text-mid); line-height: 1.8; }
+
+/* ── PILLARS (numbered list) ── */
+.leli-pillars { margin-top: 0.5rem; }
+.leli-pillar {
+  display: grid;
+  grid-template-columns: 72px 1fr;
+  gap: 0;
+  border-top: 1px solid var(--beige);
+  padding: 1.75rem 0;
+}
+.leli-pillar:last-child { border-bottom: 1px solid var(--beige); }
+.leli-pillar-num {
+  font-family: var(--serif); font-size: 3rem; font-weight: 700;
+  color: var(--beige); line-height: 1; padding-top: 4px;
+}
+.leli-pillar-body {}
+.leli-pillar-title {
+  font-family: var(--serif); font-size: 1.15rem; font-weight: 400;
+  color: var(--navy); margin-bottom: 0.5rem; line-height: 1.3;
+}
+.leli-pillar-title em { color: var(--teal); font-style: italic; }
+.leli-pillar-text { font-size: 14px; color: var(--text-mid); line-height: 1.8; }
+
+/* ── DONATE ── */
+.leli-donate-card {
+  border: 1.5px solid var(--teal);
+  background: var(--cream);
+  padding: 2rem;
+  margin-top: 2rem;
+}
+.leli-donate-label {
+  font-size: 11px; font-weight: 700; letter-spacing: 0.18em;
+  text-transform: uppercase; color: var(--teal); margin-bottom: 1.5rem;
+  display: flex; align-items: center; gap: 0.6rem;
+}
+.leli-donate-label::before {
+  content: ''; width: 24px; height: 2px; background: var(--teal);
+}
+.leli-ways { display: flex; flex-direction: column; }
+.leli-way {
+  display: grid; grid-template-columns: 48px 1fr;
+  gap: 0.75rem; align-items: start;
+  padding: 1.5rem 0;
+  border-bottom: 1px solid var(--beige);
+}
+.leli-way:last-child { border-bottom: none; padding-bottom: 0; }
+.leli-way-num {
+  font-family: var(--serif); font-size: 2rem; font-weight: 700;
+  color: var(--beige); line-height: 1; padding-top: 2px;
+}
+.leli-way-title {
+  font-family: var(--serif); font-size: 1.05rem; font-weight: 400;
+  color: var(--navy); margin-bottom: 0.4rem; line-height: 1.3;
+}
+.leli-way-detail {
+  font-size: 14px; color: var(--text-mid); line-height: 1.8;
+  word-wrap: break-word; overflow-wrap: anywhere;
+}
+.leli-way-detail strong { color: var(--navy); font-weight: 600; }
+.leli-way-detail a { color: var(--teal); text-decoration: underline; text-underline-offset: 2px; }
+.leli-mono {
+  font-family: 'Courier New', monospace;
+  font-size: 13px; color: var(--text); line-height: 1.7;
+  display: block; margin-top: 0.5rem;
+}
+.leli-notify {
+  margin-top: 1.5rem;
+  display: grid; grid-template-columns: 4px 1fr;
+}
+.leli-notify-bar { background: var(--teal); }
+.leli-notify-body {
+  background: var(--lt-teal); padding: 1.25rem 1.5rem;
+}
+.leli-notify-label {
+  font-size: 11px; font-weight: 700; letter-spacing: 0.14em;
+  text-transform: uppercase; color: var(--navy); margin-bottom: 0.4rem;
+}
+.leli-notify-text { font-size: 14px; color: var(--text-mid); line-height: 1.75; }
+.leli-notify-text a { color: var(--teal); text-decoration: underline; font-weight: 600; }
+.leli-fineprint {
+  margin-top: 1.25rem; font-size: 13px; color: var(--text-lt);
+  line-height: 1.6; text-align: center;
+}
+.leli-fineprint a { color: var(--teal); text-decoration: underline; }
+
+/* ── FOOTER ── */
+.leli-footer {
+  background: var(--navy);
+  border-top: 3px solid var(--teal);
+  padding: 2.5rem 2.5rem 2rem;
+}
+.leli-footer-inner { max-width: 860px; margin: 0 auto; }
+.leli-footer-logo {
+  font-family: var(--sans); font-size: 13px; font-weight: 700;
+  letter-spacing: 0.2em; text-transform: uppercase;
+  color: #fff; text-decoration: none; display: inline-block;
+  margin-bottom: 1rem;
+}
+.leli-footer-logo span { color: var(--teal); }
+.leli-footer-desc {
+  font-size: 14px; color: rgba(255,255,255,0.5);
+  line-height: 1.7; max-width: 540px; margin-bottom: 1.5rem;
+}
+.leli-footer-links {
+  display: flex; flex-wrap: wrap; gap: 1.5rem; margin-bottom: 1.5rem;
+}
+.leli-footer-links a {
+  font-size: 13px; color: rgba(255,255,255,0.6);
+  text-decoration: none; transition: color 0.2s;
+}
+.leli-footer-links a:hover { color: var(--teal); }
+.leli-footer-bottom {
+  padding-top: 1.25rem;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase;
+  color: rgba(255,255,255,0.22); line-height: 1.8;
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 600px) {
+  .leli-two-col { grid-template-columns: 1fr; }
+  .leli-hero-circle { display: none; }
+  .leli-hero-body, .leli-content, .leli-sec-div,
+  .leli-footer, .leli-hero-bottom { padding-left: 1.25rem; padding-right: 1.25rem; }
+  .leli-nav-inner { padding-left: 1.25rem; padding-right: 1.25rem; }
+  .leli-pillar { grid-template-columns: 56px 1fr; }
+  .leli-pillar-num { font-size: 2.25rem; }
+}
+</style>
+
+<div class="leli-wrap" id="leli-top">
+
+  <!-- HERO -->
+  <div class="leli-hero">
+    <div class="leli-hero-circle"></div>
+    <div class="leli-hero-body">
+      <div class="leli-hero-eyebrow">Lived Experience Leadership Institute</div>
+      <div class="leli-hero-title">We level up</div>
+      <span class="leli-hero-title-accent">the policy we design together.</span>
+
+      <div class="leli-hero-rule"></div>
+      <p class="leli-hero-lead">LELI prepares people with lived experience to co-design programs and policy at the speed and scale of policymaking &mdash; so public investment produces what communities actually need. LELI is a partnership between Dalbert Design and <a href="https://civicmakers.com/ridiculously-hopeful-futures/" target="_blank" rel="noopener" style="color: var(--teal); text-decoration: underline; text-underline-offset: 3px; font-weight: 500;">CivicMakers</a>.</p>
+      <div class="leli-hero-btns">
+        <a href="#leli-donate" class="leli-btn">Fund a Fellow &rarr;</a>
+        <a href="#leli-mission" class="leli-btn leli-btn--ghost">Read our mission</a>
+      </div>
+    </div>
+    <div class="leli-teal-bar"></div>
+  </div>
+
+  <!-- MISSION -->
+  <div class="leli-sec-div" id="leli-mission">
+    <div class="leli-sec-div-inner">
+      <div class="leli-sec-eyebrow">Mission</div>
+      <div class="leli-sec-title">Better policy comes from better policy design.</div>
+      <div class="leli-sec-sub">Lived experience can tell you what&rsquo;s wrong. Living expertise can help you build it right.</div>
+    </div>
+  </div>
+  <div class="leli-teal-rule"></div>
+
+  <div class="leli-content">
+    <div class="leli-content-inner">
+      <div class="leli-lede">Most policy is designed without the people closest to the problem in the room. The result is investment that doesn&rsquo;t reach who it&rsquo;s meant to &mdash; programs that miss, services that strain, dollars that get spent without the outcomes anyone hoped for.</div>
+
+      <p class="leli-p">LELI changes the design table. We prepare community members with lived experience to <em>co-author the work</em> &mdash; analyzing public input, surfacing structural barriers, translating community knowledge into the language of decision-making, and bringing it directly into the rooms where policy gets shaped.</p>
+
+      <p class="leli-p">The outcome is policy that works the first time. Investment that produces. Systems that actually serve.</p>
+
+      <div class="leli-pull">
+        <div class="leli-pull-bar"></div>
+        <div class="leli-pull-body">
+          <p class="leli-pull-text">When people with lived experience help design the policy, the policy levels up. <strong>The dollars do more. The systems do better.</strong></p>
+        </div>
+      </div>
+
+      <div class="leli-two-col">
+        <div class="leli-col">
+          <div class="leli-col-label">Lived Experience</div>
+          <div class="leli-col-title">Tells you what is wrong</div>
+          <div class="leli-col-body">The direct knowledge of what it is like to navigate systems not built for you. It surfaces the gaps that data does not capture and that people inside the system often cannot see.</div>
+        </div>
+        <div class="leli-col leli-col--teal">
+          <div class="leli-col-label">Living Expertise</div>
+          <div class="leli-col-title">Helps you build it right</div>
+          <div class="leli-col-body">What develops when someone refines their lived experience into the capacity to actively help design better systems. It builds on lived experience &mdash; it never replaces it.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- THE FELLOWSHIP -->
+  <div class="leli-sec-div" id="leli-method">
+    <div class="leli-sec-div-inner">
+      <div class="leli-sec-eyebrow">The Fellowship</div>
+      <div class="leli-sec-title">What a Fellow builds.</div>
+      <div class="leli-sec-sub">Fellows don&rsquo;t arrive needing to be filled. They arrive carrying expertise systems have refused to recognize.</div>
+    </div>
+  </div>
+  <div class="leli-teal-rule"></div>
+
+  <div class="leli-content leli-content--cream">
+    <div class="leli-content-inner">
+      <p class="leli-p">The Fellowship is where lived expertise gets named, sharpened, and brought into the design of public investment. Fellows develop the skills, relationships, and tools that stay in the community &mdash; capacity owned by the people who built it.</p>
+
+      <div class="leli-pillars">
+        <div class="leli-pillar">
+          <div class="leli-pillar-num">01</div>
+          <div class="leli-pillar-body">
+            <div class="leli-pillar-title">A leadership identity rooted in <em>self-validation.</em></div>
+            <div class="leli-pillar-text">Fellows develop a strong sense of who they are and what they know &mdash; so they can show up in policymaking spaces with the confidence the work requires.</div>
+          </div>
+        </div>
+        <div class="leli-pillar">
+          <div class="leli-pillar-num">02</div>
+          <div class="leli-pillar-body">
+            <div class="leli-pillar-title">Translating experience into <em>policy-grade insight.</em></div>
+            <div class="leli-pillar-text">Fellows analyze public comment and community input, surface patterns and structural barriers, and produce findings that decision-makers can actually use.</div>
+          </div>
+        </div>
+        <div class="leli-pillar">
+          <div class="leli-pillar-num">03</div>
+          <div class="leli-pillar-body">
+            <div class="leli-pillar-title">Co-authoring the policies that <em>shape their lives.</em></div>
+            <div class="leli-pillar-text">Fellows present at city councils, county hearings, and state meetings &mdash; moving from public comment to co-design, contributing directly to how investment gets allocated.</div>
+          </div>
+        </div>
+        <div class="leli-pillar">
+          <div class="leli-pillar-num">04</div>
+          <div class="leli-pillar-body">
+            <div class="leli-pillar-title">Building <em>durable civic capacity.</em></div>
+            <div class="leli-pillar-text">The work doesn&rsquo;t end with a grant cycle. Fellows leave with skills, relationships, and tools that stay in the community &mdash; capacity owned by the people who built it.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="leli-callout" style="margin-top: 2rem;">
+        <div class="leli-callout-bar"></div>
+        <div class="leli-callout-body">
+          <div class="leli-callout-title">Who Fellows become</div>
+          <div class="leli-callout-text">Fellows are not returning to their previous circumstances at the end of the program. They are building toward a growing ecosystem of paid, embedded roles inside county and state systems &mdash; roles that LELI is actively helping to create. The goal is for LELI Fellows to become the people decision-makers call when they need someone who can operate in high-stakes institutional environments with both lived insight and analytical skill.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DONATE -->
+  <div class="leli-sec-div" id="leli-donate">
+    <div class="leli-sec-div-inner">
+      <div class="leli-sec-eyebrow">Support the Work</div>
+      <div class="leli-sec-title">Fund a Fellow. Fund better policy.</div>
+      <div class="leli-sec-sub">Every donation funds the time of a Fellow &mdash; and the time of a Fellow is what funds the policy change.</div>
+    </div>
+  </div>
+  <div class="leli-teal-rule"></div>
+
+  <div class="leli-content">
+    <div class="leli-content-inner">
+      <div class="leli-lede">LELI is fiscally sponsored by Realize Impact, a 501(c)(3) public charity. Your gift is tax-deductible and goes directly to stipends, training, and the design work that turns lived experience into living expertise.</div>
+
+      <div class="leli-donate-card">
+        <div class="leli-donate-label">Three Ways to Give</div>
+
+        <div class="leli-ways">
+          <div class="leli-way">
+            <div class="leli-way-num">01</div>
+            <div>
+              <div class="leli-way-title">Donate online</div>
+              <div class="leli-way-detail">
+                Give securely through Realize Impact&rsquo;s donation form.<br>
+                <a href="https://www.zeffy.com/donation-form/donate-to-realize-impact" target="_blank" rel="noopener">realizeimpact.org/donate &rarr;</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="leli-way">
+            <div class="leli-way-num">02</div>
+            <div>
+              <div class="leli-way-title">Mail a check</div>
+              <div class="leli-way-detail">
+                Make checks payable to <strong>Realize Impact</strong> and mail to:
+                <span class="leli-mono">
+                  Realize Impact<br>
+                  271 Winslow Way E. #10234<br>
+                  Bainbridge Island, WA 98110
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <div class="leli-way">
+            <div class="leli-way-num">03</div>
+            <div>
+              <div class="leli-way-title">ACH or wire transfer</div>
+              <div class="leli-way-detail">
+                Send to Realize Impact&rsquo;s account at Columbia Bank:
+                <span class="leli-mono">
+                  Columbia Bank<br>
+                  249 Winslow Way E, Suite 200<br>
+                  Bainbridge Island, WA 98110<br><br>
+                  Routing #: 125108272<br>
+                  Account #: 7001202668<br>
+                  Name on Account: Realize Impact
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="leli-notify">
+          <div class="leli-notify-bar"></div>
+          <div class="leli-notify-body">
+            <div class="leli-notify-label">Important &mdash; please notify us</div>
+            <div class="leli-notify-text">However you give, please email <a href="mailto:judi@civicmakers.com?subject=LELI%20Donation%20Notification">judi@civicmakers.com</a> to let us know you&rsquo;ve donated. This ensures Realize Impact can direct your gift to LELI&rsquo;s account.</div>
+          </div>
+        </div>
+
+        <p class="leli-fineprint">LELI is fiscally sponsored by Realize Impact, a 501(c)(3) public charity. All donations are tax-deductible. Learn more about <a href="https://realizeimpact.org/fiscal-sponsorship/faq/" target="_blank" rel="noopener">fiscal sponsorship &rarr;</a></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="leli-footer">
+    <div class="leli-footer-inner">
+      <a href="#leli-top" class="leli-footer-logo">LELI <span>&middot; Dalbert Design</span></a>
+      <p class="leli-footer-desc">Lived Experience Leadership Institute. We level up the policy we design together &mdash; by preparing people with lived experience to co-author it.</p>
+      <div class="leli-footer-links">
+        <a href="#leli-mission">Mission</a>
+        <a href="#leli-method">Fellowship</a>
+        <a href="#leli-donate">Donate</a>
+        <a href="https://realizeimpact.org/fiscal-sponsorship/faq/" target="_blank" rel="noopener">Fiscal Sponsor</a>
+      </div>
+      <div class="leli-footer-bottom">
+        &copy; 2026 LELI &middot; A project of Realize Impact, a 501(c)(3)<br>
+        Antioch &middot; Contra Costa County &middot; California
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+(function() {
+  function bind() {
+    var wrap = document.querySelector('.leli-wrap');
+    if (!wrap) return;
+    wrap.addEventListener('click', function(e) {
+      var a = e.target.closest('a[href^="#leli-"]');
+      if (!a) return;
+      var id = a.getAttribute('href').slice(1);
+      var target = document.getElementById(id);
+      if (!target) return;
+      e.preventDefault();
+      e.stopPropagation();
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }, true);
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', bind);
+  } else {
+    bind();
+  }
+})();
+</script>
