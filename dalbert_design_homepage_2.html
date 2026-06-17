@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dalbert Design</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --navy: #103B51;
+  --teal: #24A791;
+  --beige: #E3E1DA;
+  --white: #ffffff;
+  --off-white: #F5F3EE;
+  --dark-teal: #00495E;
+  --text: #1a2e3b;
+  --text-mid: #3a5464;
+  --serif: 'Source Serif 4', Georgia, serif;
+  --sans: 'Inter', system-ui, sans-serif;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--white);
+  color: var(--text);
+  font-family: var(--sans);
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── HEADER ── */
+.header {
+  background: var(--white);
+  border-bottom: 1px solid rgba(16,59,81,0.12);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  padding: 0 2rem;
+}
+.header__inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+}
+.logo {
+  font-family: var(--serif);
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--navy);
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+.logo span { color: var(--teal); }
+.header-tag {
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-mid);
+}
+
+/* ── HERO ── */
+.hero {
+  background: var(--navy);
+  position: relative;
+  overflow: hidden;
+  padding: 5rem 2rem 0;
+}
+.hero__shape {
+  position: absolute;
+  bottom: 0; right: 0;
+  width: 320px; height: 320px;
+  opacity: 0.18;
+}
+.hero__inner {
+  max-width: 860px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+.hero__eyebrow {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--teal);
+  margin-bottom: 1.5rem;
+}
+.hero__title {
+  font-family: var(--serif);
+  font-size: clamp(2.2rem, 5vw, 3.4rem);
+  font-weight: 300;
+  line-height: 1.18;
+  color: var(--white);
+  max-width: 700px;
+  margin-bottom: 2rem;
+}
+.hero__title strong {
+  font-weight: 600;
+  font-style: italic;
+  color: var(--teal);
+}
+.hero__body {
+  font-size: 19px;
+  color: rgba(255,255,255,0.82);
+  max-width: 600px;
+  line-height: 1.8;
+  padding-bottom: 4rem;
+}
+
+/* curve bottom of hero */
+.hero__curve {
+  display: block;
+  width: 100%;
+  margin-bottom: -2px;
+}
+
+/* ── SECTION BASE ── */
+.section {
+  padding: 5rem 2rem;
+}
+.section__inner {
+  max-width: 860px;
+  margin: 0 auto;
+}
+.section--white { background: var(--white); }
+.section--beige { background: var(--beige); }
+.section--navy  { background: var(--navy); }
+.section--off   { background: var(--off-white); }
+
+/* ── EYEBROW / TITLE ── */
+.eyebrow {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--teal);
+  margin-bottom: 1rem;
+}
+.eyebrow--light { color: rgba(255,255,255,0.6); }
+
+.section-title {
+  font-family: var(--serif);
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  font-weight: 400;
+  line-height: 1.25;
+  color: var(--navy);
+  margin-bottom: 1.5rem;
+}
+.section-title--light { color: var(--white); }
+
+/* ── INTRO BLOCK ── */
+.intro-text {
+  font-size: 20px;
+  line-height: 1.8;
+  color: var(--text-mid);
+  max-width: 680px;
+  border-left: 3px solid var(--teal);
+  padding-left: 1.5rem;
+}
+
+/* ── WHAT WE DO ROWS ── */
+.rows { margin-top: 3rem; }
+.row-item {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: 2rem;
+  align-items: start;
+  padding: 2.5rem 0;
+  border-top: 1px solid rgba(16,59,81,0.12);
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.row-item.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.row-item:last-child { border-bottom: 1px solid rgba(16,59,81,0.12); }
+.row-num {
+  font-family: var(--serif);
+  font-size: 4.5rem;
+  font-weight: 300;
+  color: var(--beige);
+  line-height: 1;
+  padding-top: 4px;
+}
+.row-title {
+  font-family: var(--serif);
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: var(--navy);
+  margin-bottom: 0.75rem;
+  line-height: 1.3;
+}
+.row-body {
+  font-size: 17px;
+  color: var(--text-mid);
+  line-height: 1.8;
+}
+
+/* ── PULL QUOTE ── */
+.pull-quote {
+  background: var(--navy);
+  position: relative;
+  overflow: hidden;
+}
+.pull-quote__shape-top {
+  display: block;
+  width: 100%;
+  margin-top: -2px;
+}
+.pull-quote__shape-bottom {
+  display: block;
+  width: 100%;
+  margin-bottom: -2px;
+}
+.pull-quote__inner {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+}
+.pull-quote__text {
+  font-family: var(--serif);
+  font-size: clamp(1.35rem, 2.5vw, 1.9rem);
+  font-weight: 300;
+  font-style: italic;
+  color: var(--white);
+  line-height: 1.55;
+  position: relative;
+  padding-left: 2rem;
+  border-left: 3px solid var(--teal);
+}
+
+/* ── CLOSING ── */
+.closing-text {
+  font-size: 19px;
+  color: var(--text-mid);
+  line-height: 1.85;
+  max-width: 680px;
+}
+
+/* ── CORNER SHAPE SECTIONS ── */
+.shape-wrap {
+  position: relative;
+}
+.corner-shape {
+  position: absolute;
+  width: 120px;
+  height: 120px;
+}
+.corner-shape--tr { top: 0; right: 0; }
+.corner-shape--bl { bottom: 0; left: 0; }
+
+/* ── CTA BAND ── */
+.cta-band {
+  background: var(--teal);
+  padding: 3.5rem 2rem;
+  text-align: center;
+}
+.cta-band__inner { max-width: 860px; margin: 0 auto; }
+.cta-band__title {
+  font-family: var(--serif);
+  font-size: clamp(1.4rem, 2.5vw, 2rem);
+  font-weight: 400;
+  color: var(--white);
+  margin-bottom: 0.5rem;
+}
+.cta-band__sub {
+  font-size: 17px;
+  color: rgba(255,255,255,0.85);
+  margin-bottom: 2rem;
+}
+
+/* ── FOOTER ── */
+.footer {
+  background: var(--navy);
+  padding: 3rem 2rem;
+}
+.footer__inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.footer__logo {
+  font-family: var(--serif);
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--white);
+  text-decoration: none;
+}
+.footer__logo span { color: var(--teal); }
+.footer__meta {
+  font-size: 13px;
+  color: rgba(255,255,255,0.5);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* ── FADE IN OBSERVER ── */
+.fade-in {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 580px) {
+  .row-item { grid-template-columns: 1fr; gap: 0.5rem; }
+  .row-num { font-size: 3rem; }
+  .footer__inner { flex-direction: column; align-items: flex-start; }
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="header">
+  <div class="header__inner">
+    <a href="#" class="logo">Dalbert <span>Design</span></a>
+    <span class="header-tag">Contra Costa County</span>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <svg class="hero__shape" viewBox="0 0 320 320" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <circle cx="320" cy="0" r="260" fill="white"/>
+    <circle cx="320" cy="0" r="180" fill="white"/>
+    <circle cx="320" cy="0" r="100" fill="white"/>
+  </svg>
+  <div class="hero__inner">
+    <p class="hero__eyebrow">Strategic &amp; Implementation Planning</p>
+    <h1 class="hero__title">Planning built from <strong>the inside out.</strong></h1>
+    <p class="hero__body">Dalbert Design partners with county departments, government agencies, and their consultants to strengthen homelessness and housing response systems — surfacing the gaps that administrative data misses and helping institutions build solutions that work for the people they are designed to serve.</p>
+  </div>
+  <svg class="hero__curve" viewBox="0 0 1440 60" preserveAspectRatio="none" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <path d="M0 60 L0 30 Q720 0 1440 30 L1440 60 Z" fill="#ffffff"/>
+  </svg>
+</section>
+
+<!-- INTRO -->
+<section class="section section--white">
+  <div class="section__inner fade-in">
+    <p class="eyebrow">Who We Are</p>
+    <p class="intro-text">Dalbert Design is a lived experience–led organization founded by Loren Dalbert. Our work integrates the direct knowledge of what it takes to navigate homelessness and housing systems with the analytical capacity to translate that knowledge into institutional action — co-authoring the systems that govern people's lives alongside the departments that administer them.</p>
+  </div>
+</section>
+
+<!-- SHAPE TOP INTO BEIGE -->
+<div class="shape-wrap" style="background: white; line-height:0;">
+  <svg viewBox="0 0 860 80" preserveAspectRatio="none" width="100%" height="60" aria-hidden="true">
+    <path d="M0 0 L0 80 L860 80 L860 0 Q430 80 0 0Z" fill="#E3E1DA"/>
+  </svg>
+</div>
+
+<!-- WHAT WE DO -->
+<section class="section section--beige" style="padding-top: 2rem;">
+  <div class="section__inner">
+    <p class="eyebrow fade-in">What We Do</p>
+    <h2 class="section-title fade-in">Strategic and implementation planning services</h2>
+
+    <div class="rows">
+      <div class="row-item">
+        <div class="row-num">01</div>
+        <div>
+          <h3 class="row-title">Strategic plan development</h3>
+          <p class="row-body">We contribute lived experience analysis to county and regional homelessness strategic planning processes — identifying trust and dignity gaps, centering the perspectives of people with direct experience of homelessness, and ensuring that plan language reflects the real conditions people navigate rather than an idealized version of the system.</p>
+        </div>
+      </div>
+      <div class="row-item">
+        <div class="row-num">02</div>
+        <div>
+          <h3 class="row-title">Implementation planning and oversight support</h3>
+          <p class="row-body">We help implementation committees and county departments translate strategic plans into operational practice — designing the structures, protocols, and feedback mechanisms that keep implementation grounded in community reality as it unfolds.</p>
+        </div>
+      </div>
+      <div class="row-item">
+        <div class="row-num">03</div>
+        <div>
+          <h3 class="row-title">Lived experience integration</h3>
+          <p class="row-body">We design and support the structures that make lived experience participation meaningful rather than performative — including advisor selection, preparation and compensation frameworks, pre-implementation review processes, and ongoing mechanisms for community intelligence to reach decision-makers.</p>
+        </div>
+      </div>
+      <div class="row-item">
+        <div class="row-num">04</div>
+        <div>
+          <h3 class="row-title">Gap analysis and service system diagnostics</h3>
+          <p class="row-body">We identify where referral pathways break down, where resources are nominal rather than real, and where system design is producing predictable failures that data systems do not capture — informing both immediate course corrections and longer-term system redesign.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SHAPE INTO NAVY FOR PULL QUOTE -->
+<div style="background: #E3E1DA; line-height:0;">
+  <svg viewBox="0 0 860 80" preserveAspectRatio="none" width="100%" height="60" aria-hidden="true">
+    <path d="M0 80 L0 0 Q430 80 860 0 L860 80 Z" fill="#103B51"/>
+  </svg>
+</div>
+
+<!-- PULL QUOTE -->
+<section style="background: var(--navy); padding: 4rem 2rem;">
+  <div class="section__inner fade-in">
+    <p class="eyebrow eyebrow--light">Our Approach</p>
+    <blockquote class="pull-quote__text">
+      Lived experience tells you what is wrong and points out the gaps. Living expertise helps you build it right. Both belong in the room where implementation decisions are made.
+    </blockquote>
+  </div>
+</section>
+
+<!-- SHAPE OUT OF NAVY -->
+<div style="background: #103B51; line-height:0;">
+  <svg viewBox="0 0 860 80" preserveAspectRatio="none" width="100%" height="60" aria-hidden="true">
+    <path d="M0 0 L0 80 L860 80 L860 0 Q430 80 0 0Z" fill="#ffffff"/>
+  </svg>
+</div>
+
+<!-- CLOSING / POSITIONING -->
+<section class="section section--white" style="padding-top: 2rem;">
+  <div class="section__inner fade-in">
+    <p class="eyebrow">Why Dalbert Design</p>
+    <h2 class="section-title">A perspective most planning tables don't have</h2>
+    <p class="closing-text">Dalbert Design brings the direct knowledge of what it takes to navigate these systems — combined with the analytical capacity to translate that knowledge into institutional action. We work alongside county departments and their partners, not as outside critics, but as contributors to systems that work better for everyone inside them.</p>
+    <p class="closing-text" style="margin-top: 1.5rem;">Current county partnerships include the Contra Costa Health Department, the County Administrator's Office, Employment and Human Services, the Department of Conservation and Development, Behavioral Health, Probation, and the Housing Authority of Contra Costa County.</p>
+  </div>
+</section>
+
+<!-- CTA BAND -->
+<div class="cta-band">
+  <div class="cta-band__inner fade-in">
+    <h2 class="cta-band__title">Ready to bring lived experience into your implementation?</h2>
+    <p class="cta-band__sub">Let's talk about what that looks like for your department or initiative.</p>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer__inner">
+    <a href="#" class="footer__logo">Dalbert <span>Design</span></a>
+    <span class="footer__meta">Contra Costa County &middot; Bay Area &middot; Est. 2024</span>
+  </div>
+</footer>
+
+<script>
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.12 });
+
+document.querySelectorAll('.fade-in, .row-item').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
