@@ -35,13 +35,58 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+/* ── SITE NAV ── */
+.site-nav {
+  background: #0a2a38;
+  border-bottom: 1px solid rgba(36,167,145,0.2);
+  padding: 0 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 200;
+}
+.site-nav__inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 0;
+  height: 44px;
+}
+.site-nav__link {
+  font-family: var(--sans);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.5);
+  text-decoration: none;
+  padding: 0 1.1rem;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  border-right: 1px solid rgba(255,255,255,0.07);
+  transition: color 0.18s, background 0.18s;
+}
+.site-nav__link:first-child { padding-left: 0; border-left: none; }
+.site-nav__link:hover { color: var(--teal); background: rgba(36,167,145,0.06); }
+.site-nav__link.active { color: var(--teal); }
+.site-nav__link.active::after {
+  content: '';
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0; right: 0;
+  height: 2px;
+  background: var(--teal);
+}
+.site-nav__link { position: relative; }
+
 /* ── HEADER ── */
 .header {
   background: var(--white);
   border-bottom: 1px solid rgba(16,59,81,0.12);
-  position: sticky;
-  top: 0;
-  z-index: 100;
+  position: relative;
+  z-index: 10;
   padding: 0 2rem;
 }
 .header__inner {
@@ -331,6 +376,15 @@ body {
 </style>
 </head>
 <body>
+
+<!-- SITE NAV -->
+<nav class="site-nav" aria-label="Site navigation">
+  <div class="site-nav__inner">
+    <a href="index.html" class="site-nav__link active">Dalbert Design</a>
+    <a href="leli.html" class="site-nav__link">LELI</a>
+    <a href="our-guide.html" class="site-nav__link">Our Guide</a>
+  </div>
+</nav>
 
 <!-- HEADER -->
 <header class="header">
