@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Dalbert Design and CivicMakers — a lived experience–led civic design partnership for governments and nonprofits across California." />
-  <title>Home — Dalbert Design × CivicMakers</title>
+  <meta name="description" content="About the Dalbert Design and CivicMakers partnership — our people, organizations, and the values that drive our work." />
+  <title>About — Dalbert Design × CivicMakers</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;0,9..144,800;0,9..144,900;1,9..144,700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
@@ -195,50 +195,42 @@
     }
 
 
-    /* ── HERO ── */
-    .hero { min-height: 100svh; display: grid; grid-template-rows: 1fr auto; padding: 0 5vw; padding-top: 80px; position: relative; overflow: hidden; background: var(--paper); }
-    .hero-canvas { position: absolute; inset: 0; pointer-events: none; width: 100% !important; }
-    .hero::after { content: ''; position: absolute; inset: 0; pointer-events: none; background: radial-gradient(ellipse at center, rgba(249,248,255,0.92) 0%, rgba(249,248,255,0.75) 55%, rgba(249,248,255,0.3) 100%); z-index: 0; }
-    .hero-content { position: relative; z-index: 2; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 2rem; max-width: min(860px,100%); padding: 80px 0 60px; text-align: center; margin: 0 auto; }
-    .hero-stats { position: relative; z-index: 2; display: flex; flex-wrap: wrap; gap: 32px; padding: 28px 0 48px; border-top: 1px solid var(--mist); justify-content: center; }
-    .stat { display: flex; flex-direction: column; gap: 4px; text-align: center; }
-    .stat-num { font-family: var(--font-display); font-size: clamp(1.1rem,2.5vw,1.6rem); font-weight: 700; line-height: 1; color: var(--ink); }
-    .stat-num span { color: var(--signal); }
-    .stat-label { font-size: .8rem; font-weight: 500; color: #6b6b6b; letter-spacing: .05em; text-transform: uppercase; }
-    .hero-eyebrow { display: inline-flex; align-items: center; gap: 10px; font-size: .8rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: #c73010; }
-    .hero-eyebrow-line { width: 32px; height: 2px; background: #c73010; flex-shrink: 0; }
-    .hero-headline { font-family: var(--font-display); font-weight: 800; font-size: clamp(2rem,7vw,5.5rem); line-height: 1.04; letter-spacing: -.03em; }
-    .hero-headline em { font-style: normal; background: linear-gradient(135deg, var(--signal) 0%, var(--gold) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
-    .hero-sub { font-size: clamp(.95rem,2.2vw,1.25rem); color: #4a4a4a; max-width: 620px; line-height: 1.65; }
-    .hero-actions { display: flex; flex-wrap: wrap; gap: 14px; align-items: center; justify-content: center; }
-    /* WHAT grid */
-    .what-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 2px; margin-top: 60px; border: 2px solid rgba(255,255,255,.08); border-radius: var(--r-md); overflow: hidden; }
-    .what-card { padding: 40px 36px; border-right: 2px solid rgba(255,255,255,.08); transition: background .25s; }
-    .what-card:last-child,.what-card:nth-child(2) { border-right: none; }
-    .what-card:hover { background: rgba(255,255,255,.04); }
-    .what-card-num { font-family: var(--font-display); font-size: 3rem; font-weight: 800; color: rgba(255,255,255,.25); line-height: 1; margin-bottom: 20px; }
-    .what-card h3 { font-family: var(--font-display); font-size: 1.2rem; font-weight: 700; margin-bottom: 12px; color: var(--white); }
-    .what-card p { font-size: .9rem; color: rgba(255,255,255,.6); line-height: 1.65; }
-    /* PHASES */
-    .phases-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-top: 60px; }
-    /* ORG CARDS */
-    .org-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 48px; }
-    .org-card { background: var(--paper); border-radius: var(--r-md); padding: 44px 40px; position: relative; overflow: hidden; border: 2px solid transparent; transition: border-color .2s, transform .2s; }
-    .org-card:hover { border-color: var(--mist); transform: translateY(-3px); }
-    .org-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; }
-    .org-card.dalbert::before { background: linear-gradient(90deg,var(--sage),#6da38e); }
-    .org-card.civic::before { background: linear-gradient(90deg,var(--signal),var(--gold)); }
-    .org-label { font-size: .72rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: #767676; margin-bottom: 8px; }
-    .org-name { font-family: var(--font-display); font-size: 1.5rem; font-weight: 800; margin-bottom: 16px; letter-spacing: -.02em; }
-    .org-desc { font-size: .92rem; color: #555; line-height: 1.7; margin-bottom: 20px; }
-    .org-link { font-size: .85rem; font-weight: 600; color: var(--sage); display: inline-flex; align-items: center; gap: 6px; transition: gap .2s; }
-    .org-link:hover { gap: 10px; }
-    .org-card.civic .org-link { color: var(--signal); }
-    /* CLIENTS */
-    .clients { background: var(--paper); padding: 80px 5vw; }
-    .clients-label { font-size: .75rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: #5f5f5f; text-align: center; margin-bottom: 40px; }
-    .clients-grid { display: flex; flex-wrap: wrap; gap: 16px; justify-content: center; align-items: center; max-width: 1100px; margin: 0 auto; }
-    @media (max-width: 640px) { .what-grid,.phases-grid,.org-grid { grid-template-columns: 1fr; } .hero-canvas { display: none; } .hero::after { display: none; } .hero-stats { gap: 16px; } }
+    .page-hero-bg { position:absolute;right:0;top:50%;transform:translateY(-50%);font-family:var(--font-display);font-weight:800;font-size:clamp(6rem,18vw,14rem);color:rgba(255,255,255,.04);line-height:1;pointer-events:none;white-space:nowrap;letter-spacing:-.04em; }
+    .inner { max-width:1100px;margin:0 auto; }
+    .org-grid { display:grid;grid-template-columns:1fr 1.4fr;gap:64px;align-items:flex-start; }
+    .org-aside-badge { width:72px;height:72px;border-radius:var(--r-md);display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-size:1.6rem;font-weight:800;margin-bottom:24px; }
+    .badge-d { background:var(--sage-lt);color:var(--sage); }
+    .badge-c { background:var(--signal-lt);color:var(--signal); }
+    .org-aside-label { font-size:.68rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#767676;margin-bottom:6px; }
+    .org-aside-name { font-family:var(--font-display);font-size:clamp(1.5rem,4vw,2.4rem);font-weight:800;letter-spacing:-.025em;margin-bottom:8px; }
+    .org-aside-tagline { font-size:.9rem;font-weight:600;color:#6b6b6b;text-transform:uppercase;letter-spacing:.06em; }
+    .org-body { font-size:1rem;color:#4a4a4a;line-height:1.78; }
+    .org-body p+p { margin-top:1.1rem; }
+    .people-grid { display:grid;grid-template-columns:repeat(2,1fr);gap:24px;margin-top:56px; }
+    .person { background:var(--white);border-radius:var(--r-md);padding:40px 36px;border:2px solid transparent;transition:border-color .2s,transform .2s; }
+    .person:hover { border-color:var(--mist);transform:translateY(-3px); }
+    .person-av { width:64px;height:64px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-size:1.4rem;font-weight:800;margin-bottom:20px; }
+    .av-d { background:var(--sage-lt);color:var(--sage); }
+    .av-c { background:var(--signal-lt);color:var(--signal); }
+    .person h3 { font-family:var(--font-display);font-size:1.2rem;font-weight:800;margin-bottom:4px; }
+    .person-role { font-size:.78rem;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:#767676;margin-bottom:16px; }
+    .person p { font-size:.9rem;color:#555;line-height:1.68; }
+    .person-org { display:inline-block;margin-top:16px;padding:4px 14px;border-radius:var(--r-pill);font-size:.72rem;font-weight:700; }
+    .leli-card { background:var(--sage);border-radius:var(--r-lg);padding:60px;color:var(--white);margin-top:48px;display:grid;grid-template-columns:1fr auto;gap:40px;align-items:center;position:relative;overflow:hidden; }
+    .leli-card::before { content:'LELI';position:absolute;right:-10px;top:50%;transform:translateY(-50%);font-family:var(--font-display);font-weight:800;font-size:clamp(5rem,14vw,10rem);color:rgba(255,255,255,.06);line-height:1;pointer-events:none; }
+    .leli-card h3 { font-family:var(--font-display);font-size:clamp(1.3rem,3vw,2rem);font-weight:800;margin-bottom:12px;color:var(--white);letter-spacing:-.02em; }
+    .leli-card p { font-size:1rem;color:rgba(255,255,255,.8);line-height:1.7;max-width:520px; }
+    .leli-actions { display:flex;flex-direction:column;gap:12px;flex-shrink:0; }
+    .values-grid { display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-top:56px;border:2px solid rgba(255,255,255,.08);border-radius:var(--r-md);overflow:hidden; }
+    .value-card { padding:36px 32px;border-right:2px solid rgba(255,255,255,.08);transition:background .2s; }
+    .value-card:last-child,.value-card:nth-child(3) { border-right:none; }
+    .value-card:hover { background:rgba(255,255,255,.04); }
+    .value-icon { width:36px;height:36px;border-radius:var(--r-sm);background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;margin-bottom:16px; }
+    .value-icon svg { width:18px;height:18px;stroke:var(--gold);fill:none;stroke-width:1.5;stroke-linecap:round; }
+    .value-card h3 { font-family:var(--font-display);font-size:1rem;font-weight:800;color:var(--white);margin-bottom:8px; }
+    .value-card p { font-size:.85rem;color:rgba(255,255,255,.6);line-height:1.65; }
+    @media(max-width:900px){.org-grid{grid-template-columns:1fr;gap:40px;}.people-grid{grid-template-columns:1fr;}.leli-card{grid-template-columns:1fr;padding:40px 32px;}.values-grid{grid-template-columns:1fr 1fr;}.leli-card::before{display:none;}}
+    @media(max-width:640px){.values-grid{grid-template-columns:1fr;}}
   </style>
 </head>
 <body>
@@ -248,10 +240,10 @@
     Dalbert&thinsp;&times;&thinsp;CivicMakers
   </a>
   <div class="nav-links">
-    <a href="index.html" class="active">Home</a>
+    <a href="index.html" class="">Home</a>
     <a href="services.html" class="">Services</a>
     <a href="work.html" class="">Our Work</a>
-    <a href="about.html" class="">About</a>
+    <a href="about.html" class="active">About</a>
     <a href="our-guide.html" class="">Our Guide</a>
     <a href="contact.html" class="nav-cta">Work with us</a>
   </div>
@@ -272,184 +264,122 @@
       </button>
     </div>
     <div class="nav-drawer-links">
-      <a href="index.html" class="active">Home</a>
+      <a href="index.html" class="">Home</a>
       <a href="services.html" class="">Services</a>
       <a href="work.html" class="">Our Work</a>
-      <a href="about.html" class="">About</a>
+      <a href="about.html" class="active">About</a>
       <a href="our-guide.html" class="">Our Guide</a>
     </div>
     <div class="nav-drawer-cta"><a href="contact.html">Work with us</a></div>
   </div>
 </div>
-
-<section class="hero">
-  <canvas class="hero-canvas" id="radar-canvas" aria-hidden="true"></canvas>
-  <div class="hero-content">
-    <div class="hero-eyebrow">
-      <span class="hero-eyebrow-line"></span>
-      Dalbert Design × CivicMakers
-      <span class="hero-eyebrow-line"></span>
-    </div>
-    <h1 class="hero-headline">
-      The expertise<br>institutions need<br>is <em>already in the community.</em>
-    </h1>
-    <p class="hero-sub">A lived experience–led partnership combining firsthand knowledge of navigating public systems with a decade of human-centered design practice — building civic solutions that actually work.</p>
-    <div class="hero-actions">
-      <a href="services.html" class="btn-primary">Explore our services</a>
-      <a href="work.html" class="btn-secondary">See our work <svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M3 9h12M9 3l6 6-6 6"/></svg></a>
-    </div>
-  </div>
-  <div class="hero-stats fade-up">
-    <div class="stat"><span class="stat-num"><span>10</span>+ Years</span><span class="stat-label">Civic design practice</span></div>
-    <div class="stat"><span class="stat-num"><span>7</span></span><span class="stat-label">County partnerships</span></div>
-    <div class="stat"><span class="stat-num"><span>6</span></span><span class="stat-label">Core service areas</span></div>
-    <div class="stat"><span class="stat-num"><span>1</span></span><span class="stat-label">Integrated LE approach</span></div>
-  </div>
-</section>
-
-<div class="ticker" aria-hidden="true">
-  <div class="ticker-track">
-    <span class="ticker-item"><span class="ticker-dot"></span>Lived Experience Leadership</span>
-    <span class="ticker-item"><span class="ticker-dot"></span>Human-Centered Design</span>
-    <span class="ticker-item"><span class="ticker-dot"></span>Community Engagement</span>
-    <span class="ticker-item"><span class="ticker-dot"></span>Strategic Planning</span>
-    <span class="ticker-item"><span class="ticker-dot"></span>Service Design &amp; Evaluation</span>
-    <span class="ticker-item"><span class="ticker-dot"></span>Capacity Building</span>
-    <span class="ticker-item"><span class="ticker-dot"></span>Gap Analysis</span>
-    <span class="ticker-item"><span class="ticker-dot"></span>Civic Intelligence</span>
-    <span class="ticker-item"><span class="ticker-dot"></span>Lived Experience Leadership</span>
-    <span class="ticker-item"><span class="ticker-dot"></span>Human-Centered Design</span>
-    <span class="ticker-item"><span class="ticker-dot"></span>Community Engagement</span>
-    <span class="ticker-item"><span class="ticker-dot"></span>Strategic Planning</span>
-    <span class="ticker-item"><span class="ticker-dot"></span>Service Design &amp; Evaluation</span>
-    <span class="ticker-item"><span class="ticker-dot"></span>Capacity Building</span>
-    <span class="ticker-item"><span class="ticker-dot"></span>Gap Analysis</span>
-    <span class="ticker-item"><span class="ticker-dot"></span>Civic Intelligence</span>
+<div class="page-hero">
+  <div class="page-hero-bg" aria-hidden="true">ABOUT</div>
+  <div class="page-hero-inner">
+    <div class="section-eyebrow fade-up">About the partnership</div>
+    <h1 class="section-title fade-up">Designed from the <em>inside out.</em></h1>
+    <p class="section-body fade-up">We are a partnership between a lived experience–led design firm and a decade-old human-centered design consultancy — offering what most organizations can't: methodology grounded in genuine community knowledge.</p>
   </div>
 </div>
 
-<!-- TWO ORGS -->
-<section style="background:var(--white);">
-  <div style="max-width:1100px;margin:0 auto;">
-    <div class="section-eyebrow fade-up">The partnership</div>
-    <h2 class="section-title fade-up">Two organizations.<br><em>One integrated approach.</em></h2>
-    <p class="section-body fade-up">Our partnership is built on a simple premise: the people closest to a problem hold essential knowledge for solving it. We structure every engagement to keep that knowledge in the room.</p>
+<section id="dalbert" style="background:var(--white);">
+  <div class="inner">
     <div class="org-grid">
-      <div class="org-card dalbert fade-up">
-        <div class="org-label">Organization one</div>
-        <div class="org-name">Dalbert Design</div>
-        <p class="org-desc">A lived experience–led firm specializing in homelessness and housing response systems. We surface the gaps that administrative data misses and translate community knowledge into institutional action.</p>
-        <a href="about.html#dalbert" class="org-link">About Dalbert Design →</a>
+      <div class="fade-up">
+        <div class="org-aside-badge badge-d">D</div>
+        <div class="org-aside-label">Organization one</div>
+        <div class="org-aside-name">Dalbert Design</div>
+        <div class="org-aside-tagline">Lived experience, institutionalized</div>
+        <div style="margin-top:20px;display:flex;flex-wrap:wrap;gap:8px;">
+          <span class="tag tag-sage">Housing Systems</span>
+          <span class="tag tag-sage">Lived Experience</span>
+          <span class="tag tag-sage">Contra Costa County</span>
+        </div>
       </div>
-      <div class="org-card civic fade-up">
-        <div class="org-label">Organization two</div>
-        <div class="org-name">CivicMakers</div>
-        <p class="org-desc">A strategic consultancy with 10+ years partnering with governments and nonprofits. We use co-design, community engagement, and systems thinking to shape more just, resilient public services.</p>
-        <a href="about.html#civicmakers" class="org-link">About CivicMakers →</a>
+      <div class="org-body fade-up">
+        <p>Dalbert Design is a lived experience–led organization founded by Loren Dalbert and based in Contra Costa County. Our work integrates the direct knowledge of navigating homelessness and housing systems with the analytical capacity to translate that knowledge into institutional action.</p>
+        <p>We co-author the systems that govern people's lives alongside the departments that administer them — not as outside critics, but as contributors to systems that work better for everyone inside them. Our county partnerships currently span seven departments including Contra Costa Health, Employment and Human Services, Behavioral Health, and the Housing Authority of Contra Costa County.</p>
+        <p>Loren came to this work through direct experience. A VA housing case manager encouraged him to apply for a lived experience consultant role on a county project connecting homelessness services to workforce development. He later co-led a Workforce Accelerator Fund initiative and helped catalyze the CoCo Go BIG guaranteed income pilot and $4.25 million in county funding.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- WHAT WE DO DARK BAND -->
-<section style="padding:80px 3vw;">
-  <div class="band-dark fade-up">
-    <div class="section-eyebrow gold">What we offer together</div>
-    <h2 class="section-title">A fuller range of capabilities<br><em>than either of us alone.</em></h2>
-    <p class="section-body">Our partnership lets clients access what neither organization can offer independently — rigorous design methods grounded in the firsthand knowledge of people who have lived these systems.</p>
-    <div class="what-grid">
-      <div class="what-card"><div class="what-card-num">01</div><h3>Lived Experience Integration</h3><p>Advisor frameworks, compensation structures, and feedback loops that keep community intelligence reaching decision-makers throughout your engagement.</p></div>
-      <div class="what-card"><div class="what-card-num">02</div><h3>Community Engagement</h3><p>Trust-first strategies, plain language, and co-design sessions that surface genuine insight — not performed consensus — from the communities you serve.</p></div>
-      <div class="what-card"><div class="what-card-num">03</div><h3>Service Design &amp; Evaluation</h3><p>Participatory research, service blueprints, and actionable evaluation reports tested with the people they're built for.</p></div>
-      <div class="what-card"><div class="what-card-num">04</div><h3>Strategic Planning</h3><p>Homelessness strategic plans and departmental roadmaps grounded in what's actually happening on the ground — not idealized systems.</p></div>
+<section id="civicmakers" style="background:var(--paper);">
+  <div class="inner">
+    <div class="org-grid">
+      <div class="fade-up">
+        <div class="org-aside-badge badge-c">C</div>
+        <div class="org-aside-label" style="color:var(--signal);">Organization two</div>
+        <div class="org-aside-name">CivicMakers</div>
+        <div class="org-aside-tagline">Human-centered design for public good</div>
+        <div style="margin-top:20px;display:flex;flex-wrap:wrap;gap:8px;">
+          <span class="tag tag-signal">Service Design</span>
+          <span class="tag tag-signal">Strategic Planning</span>
+          <span class="tag tag-signal">Bay Area &amp; Beyond</span>
+        </div>
+      </div>
+      <div class="org-body fade-up">
+        <p>CivicMakers is a strategic consultancy and community of practitioners that believes in the power of inclusive, collaborative design to shape a better world. Founded over a decade ago in San Francisco, we partner with governments, nonprofits, and mission-driven organizations to unearth human insights and co-create solutions to public challenges.</p>
+        <p>We specialize in four core service areas: Service Design &amp; Evaluation; Strategic Planning; Training &amp; Capacity Building; and Community &amp; Stakeholder Engagement. Our team of pragmatic optimists brings multidisciplinary experience from across the public, private, and social sectors.</p>
+        <p>We've worked with agencies across California — from the CA Health and Human Services Agency to city departments in San José, San Rafael, Fremont, and San Francisco. Our approach: we design with communities, not for them.</p>
+      </div>
     </div>
-    <div style="margin-top:40px;"><a href="services.html" class="btn-white">Full services overview</a></div>
   </div>
 </section>
 
-<!-- HOW WE WORK -->
 <section style="background:var(--white);">
-  <div style="max-width:1100px;margin:0 auto;">
-    <div class="section-eyebrow fade-up">Our approach</div>
-    <h2 class="section-title fade-up">From the inside out — <em>always.</em></h2>
-    <p class="section-body fade-up">We start where most consultancies don't: with people who know what it takes to navigate these systems firsthand.</p>
-    <div class="phases-grid">
-      <div class="phase phase-a fade-up">
-        <div class="phase-label">Step One</div>
-        <div class="phase-title">Surface what data misses</div>
-        <p class="phase-desc">Participatory research that restores trust, upholds dignity, and uncovers insights that administrative systems routinely obscure.</p>
-        <div class="phase-tags"><span class="tag">Lived Experience</span><span class="tag">Community Input</span><span class="tag">Trust-Building</span></div>
-      </div>
-      <div class="phase phase-b fade-up">
-        <div class="phase-label">Step Two</div>
-        <div class="phase-title">Map the real system</div>
-        <p class="phase-desc">We examine how referral pathways actually work — identifying trust gaps, breakdowns, and design failures that data doesn't capture.</p>
-        <div class="phase-tags"><span class="tag">Gap Analysis</span><span class="tag">System Mapping</span><span class="tag">Diagnostics</span></div>
-      </div>
-      <div class="phase phase-c fade-up">
-        <div class="phase-label">Step Three</div>
-        <div class="phase-title">Co-design the solution</div>
-        <p class="phase-desc">Working alongside your team and the people you serve to translate learning into plans, tools, and structures with shared ownership.</p>
-        <div class="phase-tags"><span class="tag">Co-Design</span><span class="tag">Facilitation</span><span class="tag">Prototyping</span></div>
-      </div>
-      <div class="phase phase-d fade-up">
-        <div class="phase-label">Step Four</div>
-        <div class="phase-title">Build capacity to continue</div>
-        <p class="phase-desc">Feedback structures that outlast the engagement — so community intelligence keeps reaching decision-makers long after we step back.</p>
-        <div class="phase-tags"><span class="tag">Capacity Transfer</span><span class="tag">Training</span><span class="tag">Handoff</span></div>
-      </div>
+  <div class="inner">
+    <div class="section-eyebrow fade-up">Our people</div>
+    <h2 class="section-title fade-up">The team behind <em>the work.</em></h2>
+    <p class="section-body fade-up">Our leadership brings together lived experience, design research, public administration, and community development — perspectives that rarely share the same room.</p>
+    <div class="people-grid">
+      <div class="person fade-up"><div class="person-av av-d">L</div><h3>Loren Dalbert</h3><p class="person-role">Founder · Dalbert Design</p><p>Loren works at the intersection of lived experience and institutional change. His philosophy: sometimes the best way to change systems is to color outside the lines — then make the system move the lines to include what you've created. Lives in Antioch, CA.</p><span class="person-org tag-sage" style="background:var(--sage-lt);color:var(--sage);">Dalbert Design</span></div>
+      <div class="person fade-up"><div class="person-av av-c">J</div><h3>Judi Brown</h3><p class="person-role">Co-founder &amp; Managing Partner · CivicMakers</p><p>Judi co-designs immersive, accessible learning experiences to bring collaborative problem-solving tools to individuals and institutions. Over a decade in social innovation with a graduate background in public administration and policy.</p><span class="person-org tag-signal" style="background:var(--signal-lt);color:var(--signal);">CivicMakers</span></div>
+      <div class="person fade-up"><div class="person-av av-c">V</div><h3>Virginia Carlson</h3><p class="person-role">Public Policy Expert · CivicMakers</p><p>Founder of Make Fast Studio and seasoned public policy expert skilled in design thinking, facilitation, and engagement. Virginia teaches meeting design and collaborates to improve public policy and civic initiatives through participatory methods.</p><span class="person-org" style="background:var(--signal-lt);color:var(--signal);">CivicMakers</span></div>
+      <div class="person fade-up"><div class="person-av av-c">C</div><h3>Chris Lezama</h3><p class="person-role">Design Researcher · CivicMakers</p><p>Chris loves solving problems and is energized by ambiguity. He believes people — especially those with a limited voice in society — should have more opportunities to shape the world around them and the systems they navigate.</p><span class="person-org" style="background:var(--signal-lt);color:var(--signal);">CivicMakers</span></div>
     </div>
   </div>
 </section>
 
-<!-- LELI SPOTLIGHT SAGE BAND -->
 <section style="padding:80px 3vw;">
-  <div class="band-sage fade-up">
-    <div class="section-eyebrow light">Current initiative</div>
-    <h2 class="section-title" style="color:var(--white);">The Lived Experience Leadership Institute — <em>LELI</em></h2>
-    <p class="section-body" style="color:rgba(255,255,255,.75);max-width:600px;margin-bottom:40px;">Our signature program trains young adults ages 18–26 from five unincorporated Contra Costa communities in civic intelligence research, AI-directed analysis, and policy engagement. Cohort 1 launches August 2026.</p>
-    <div style="display:flex;gap:14px;flex-wrap:wrap;">
-      <a href="https://leli.design" target="_blank" rel="noopener" class="btn-white">Visit leli.design</a>
-      <a href="https://leli.design/leli-apply.html" target="_blank" rel="noopener" class="btn-ghost-white">Apply to LELI</a>
+  <div class="band-dark">
+    <div class="section-eyebrow gold fade-up">What guides us</div>
+    <h2 class="section-title fade-up" style="color:var(--white);">Principles we <em>actually design by.</em></h2>
+    <p class="section-body fade-up" style="color:rgba(255,255,255,.65);">These aren't aspirations — they're methodological commitments that shape every engagement, every room we walk into, and every deliverable we produce.</p>
+    <div class="values-grid fade-up">
+      <div class="value-card"><div class="value-icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/></svg></div><h3>Design with, not for</h3><p>Community is not a monolith. We take time to understand who is impacted and build engagement strategies relevant to local needs.</p></div>
+      <div class="value-card"><div class="value-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><h3>Dignity before data</h3><p>Lived experience is not an input to be extracted. We compensate advisors and build structures that make contribution meaningful.</p></div>
+      <div class="value-card"><div class="value-icon"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div><h3>Trust as infrastructure</h3><p>We build relationships before we build plans — understanding how community members want to be engaged, then maintaining those bonds long after.</p></div>
+      <div class="value-card"><div class="value-icon"><svg viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 0 3-3h7z"/></svg></div><h3>Capacity over dependency</h3><p>We share our tools with every partner. The goal is for your team to lead the work long after we step back.</p></div>
+      <div class="value-card"><div class="value-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div><h3>Pragmatic optimism</h3><p>We identify real leverage points and build durable change there — we don't oversell transformation.</p></div>
+      <div class="value-card"><div class="value-icon"><svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div><h3>Actionable feedback loops</h3><p>We create loops that bring people along from discovery through development — so those engaged see themselves in the end product.</p></div>
     </div>
   </div>
 </section>
 
-<!-- CLIENTS -->
-<div class="clients">
-  <div>
-    <p class="clients-label fade-up">Organizations we've worked with</p>
-    <div class="clients-grid fade-up">
-      <span class="partner-badge">Contra Costa Health Dept.</span>
-      <span class="partner-badge">County Administrator's Office</span>
-      <span class="partner-badge">Employment &amp; Human Services</span>
-      <span class="partner-badge">Conservation &amp; Development</span>
-      <span class="partner-badge">Behavioral Health</span>
-      <span class="partner-badge">Probation</span>
-      <span class="partner-badge">Housing Authority of CCC</span>
-      <span class="partner-badge">CA Health &amp; Human Services</span>
-      <span class="partner-badge">City of San José</span>
-      <span class="partner-badge">City of San Rafael</span>
-      <span class="partner-badge">City of Fremont</span>
-      <span class="partner-badge">City of San Francisco</span>
-      <span class="partner-badge">Cerritos College</span>
-      <span class="partner-badge">City of Santa Rosa</span>
+<section style="background:var(--white);">
+  <div class="inner">
+    <div class="section-eyebrow fade-up">Current initiative</div>
+    <h2 class="section-title fade-up">The Lived Experience <em>Leadership Institute</em></h2>
+    <p class="section-body fade-up">Our signature program — where our partnership methodology becomes a training program for the next generation of civic leaders.</p>
+    <div class="leli-card fade-up">
+      <div>
+        <h3>LELI — Cohort 1 launching August 2026</h3>
+        <p>The Lived Experience Leadership Institute trains fellows ages 18–26 from five unincorporated Contra Costa County communities — Rodeo, Crockett, Pacheco, Vine Hill, and Clyde — in civic intelligence research, AI-directed analysis, and policy engagement. Funded through a Marathon and Phillips 66 Community Benefits Agreement.</p>
+      </div>
+      <div class="leli-actions">
+        <a href="https://leli.design" target="_blank" rel="noopener" class="btn-white">Visit leli.design</a>
+        <a href="https://leli.design/leli-apply.html" target="_blank" rel="noopener" class="btn-ghost-white">Apply to LELI</a>
+      </div>
     </div>
   </div>
-</div>
+</section>
 
-<!-- CTA BAND -->
 <div class="cta-band fade-up">
-  <div>
-    <h2>Ready to bring lived experience into your work?</h2>
-    <p>We're taking on new engagements across California. Let's talk about what this looks like for your department or initiative.</p>
-  </div>
-  <div class="cta-band-actions">
-    <a href="contact.html" class="btn-white">Start a conversation</a>
-    <a href="work.html" class="btn-ghost-white">See our work</a>
-  </div>
+  <div><h2>Bringing what most tables are missing.</h2><p>Ready to talk about what a partnership engagement looks like for your department or initiative?</p></div>
+  <div class="cta-band-actions"><a href="contact.html" class="btn-white">Get in touch</a><a href="work.html" class="btn-ghost-white">See our work</a></div>
 </div>
-
 <footer>
   <div class="footer-inner">
     <div class="footer-brand">
@@ -489,9 +419,7 @@
     <span>© 2025 Dalbert Design &amp; CivicMakers. All rights reserved.</span>
     <span><a href="https://dalbert.design">dalbert.design</a> &nbsp;×&nbsp; <a href="https://civicmakers.com">civicmakers.com</a></span>
   </div>
-</footer>
-
-<script>
+</footer><script>
   /* NAV scroll */
   const nav = document.getElementById('main-nav');
   if (nav) window.addEventListener('scroll', () => { nav.classList.toggle('scrolled', window.scrollY > 40); }, {passive:true});
@@ -524,51 +452,6 @@
     closeBtn && closeBtn.addEventListener('click', closeDrawer);
     document.addEventListener('keydown', e => { if (e.key==='Escape') closeDrawer(); });
     drawer.querySelectorAll('a').forEach(a => a.addEventListener('click', closeDrawer));
-  })();
-</script>
-<script>
-  /* Civic Radar Canvas */
-  (function() {
-    const canvas = document.getElementById('radar-canvas');
-    if (!canvas) return;
-    const ctx = canvas.getContext('2d');
-    let W, H, raf;
-    function resize() { W = canvas.width = canvas.parentElement.clientWidth || window.innerWidth; H = canvas.height = canvas.parentElement.clientHeight || window.innerHeight; }
-    resize(); window.addEventListener('resize', resize);
-    const rings = [{r:.18,alpha:.07},{r:.32,alpha:.055},{r:.50,alpha:.04},{r:.72,alpha:.028}];
-    const labels = ['Dalbert Design','CivicMakers','LELI','Community','Partnership'];
-    const dots = labels.map((name,i) => {
-      const angle = (i/labels.length)*Math.PI*2 - Math.PI/2;
-      const ring = rings[Math.floor(Math.random()*3)];
-      return { name, angle, baseR: ring.r, pulse: Math.random()*Math.PI*2, pulseSpeed: .008+Math.random()*.004 };
-    });
-    let sweep = 0;
-    function draw() {
-      ctx.clearRect(0,0,W,H);
-      const cx=W*.5, cy=H*.5, maxR=Math.min(W*.7,H*.85);
-      rings.forEach(r => { ctx.beginPath(); ctx.arc(cx,cy,r.r*maxR,0,Math.PI*2); ctx.strokeStyle=`rgba(13,15,20,${r.alpha*.5})`; ctx.lineWidth=1; ctx.stroke(); });
-      ctx.strokeStyle='rgba(13,15,20,0.025)'; ctx.lineWidth=1;
-      ctx.beginPath(); ctx.moveTo(cx-maxR,cy); ctx.lineTo(cx+maxR,cy); ctx.stroke();
-      ctx.beginPath(); ctx.moveTo(cx,cy-maxR); ctx.lineTo(cx,cy+maxR); ctx.stroke();
-      sweep += .008;
-      ctx.save(); ctx.translate(cx,cy); ctx.rotate(sweep);
-      const g=ctx.createLinearGradient(0,0,maxR,0); g.addColorStop(0,'rgba(232,75,47,0.08)'); g.addColorStop(1,'rgba(232,75,47,0)');
-      ctx.beginPath(); ctx.moveTo(0,0); ctx.arc(0,0,maxR,-.35,0,false); ctx.closePath(); ctx.fillStyle=g; ctx.fill();
-      ctx.beginPath(); ctx.moveTo(0,0); ctx.lineTo(maxR,0); ctx.strokeStyle='rgba(232,75,47,0.18)'; ctx.lineWidth=1.5; ctx.stroke();
-      ctx.restore();
-      dots.forEach(dot => {
-        dot.pulse += dot.pulseSpeed;
-        const r=dot.baseR*maxR, dx=cx+Math.cos(dot.angle)*r, dy=cy+Math.sin(dot.angle)*r;
-        const nA=((dot.angle%(Math.PI*2))+Math.PI*2)%(Math.PI*2), nS=(sweep%(Math.PI*2)+Math.PI*2)%(Math.PI*2);
-        const diff=((nS-nA)+Math.PI*2)%(Math.PI*2), freshHit=diff<0.5, glow=freshHit?Math.max(0,1-diff*2):0;
-        if(glow>.01){ctx.beginPath();ctx.arc(dx,dy,12+glow*16,0,Math.PI*2);ctx.fillStyle=`rgba(232,75,47,${glow*.10})`;ctx.fill();}
-        ctx.beginPath(); ctx.arc(dx,dy,3.5,0,Math.PI*2); ctx.fillStyle=freshHit?`rgba(200,48,16,${.7+glow*.3})`:'rgba(13,15,20,0.18)'; ctx.fill();
-        if(glow>.3){ctx.font='500 11px Inter,sans-serif';ctx.fillStyle=`rgba(180,40,10,${glow*.85})`;ctx.fillText(dot.name,dx+10,dy+4);}
-      });
-      raf=requestAnimationFrame(draw);
-    }
-    raf=requestAnimationFrame(draw);
-    document.addEventListener('visibilitychange',()=>{ if(document.hidden) cancelAnimationFrame(raf); else raf=requestAnimationFrame(draw); });
   })();
 </script>
 </body>
