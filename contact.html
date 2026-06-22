@@ -438,29 +438,59 @@
   })();
 </script>
 <script>
-  const SCRIPT_URL = 'https://script.google.com/a/macros/dalbert.design/s/AKfycbz_bUhyDTPC7iVSCw_We6d_rzw8LSRdLL7Av5JN95BUtj1D7z_Veg_B3RKxyELerbD8iA/exec';
+  const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzElWdtK0bzD-Ex2aEGOsBRfhpO5JfQPA41WJE5vEN0AtXYvY58544iuvjn18oJ7LhoIQ/exec';
   const form = document.getElementById('contact-form');
   const btn  = document.getElementById('submit-btn');
   const note = document.getElementById('form-note');
+
   form.addEventListener('submit', async e => {
     e.preventDefault();
+
+    // Validate required fields
     let valid = true;
-    form.querySelectorAll('[required]').forEach(f => { if(!f.value.trim()){f.style.borderColor='var(--signal)';valid=false;}else f.style.borderColor=''; });
-    if(!valid){note.textContent='Please fill in the required fields.';note.style.color='var(--signal)';return;}
-    btn.disabled=true;btn.textContent='Sending…';
-    const params=new URLSearchParams();
-    new FormData(form).forEach((v,k)=>params.append(k,v));
-    params.append('submittedAt',new Date().toLocaleString());
-    try{
-      if(SCRIPT_URL!=='YOUR_APPS_SCRIPT_URL_HERE') await fetch(SCRIPT_URL+'?'+params.toString(),{method:'GET',mode:'no-cors'});
-      document.getElementById('form-body').style.display='none';
-      document.getElementById('form-success').style.display='block';
-    }catch(err){btn.disabled=false;btn.textContent='Send message';note.textContent='Something went wrong. Please try again.';note.style.color='var(--signal)';}
+    form.querySelectorAll('[required]').forEach(f => {
+      if (!f.value.trim()) { f.style.borderColor = 'var(--signal)'; valid = false; }
+      else f.style.borderColor = '';
+    });
+    if (!valid) { note.textContent = 'Please fill in the required fields.'; note.style.color = 'var(--signal)'; return; }
+
+    btn.disabled = true; btn.textContent = 'Sending…';
+
+    // Build params — collect checkboxes as comma-joined string
+    const data = new FormData(form);
+    const params = new URLSearchParams();
+    const topics = [];
+    data.forEach((v, k) => {
+      if (k === 'topics') { topics.push(v); }
+      else { params.set(k, v); }
+    });
+    params.set('topics', topics.join(', '));
+    params.set('submittedAt', new Date().toLocaleString());
+
+    try {
+      await fetch(SCRIPT_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: params.toString(),
+      });
+      // no-cors means we can't read the response — assume success if no exception
+      form.reset();
+      document.getElementById('form-body').style.display = 'none';
+      document.getElementById('form-success').style.display = 'block';
+    } catch(err) {
+      btn.disabled = false;
+      btn.textContent = 'Send message';
+      note.textContent = 'Connection error — please email us directly at loren@dalbert.design';
+      note.style.color = 'var(--signal)';
+      console.error('Form submission error:', err);
+    }
   });
-  document.querySelectorAll('.faq-q').forEach(q=>{
-    function toggle(){const item=q.closest('.faq-item');item.classList.toggle('open');}
-    q.addEventListener('click',toggle);
-    q.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();toggle();}});
+
+  document.querySelectorAll('.faq-q').forEach(q => {
+    function toggle() { const item = q.closest('.faq-item'); item.classList.toggle('open'); }
+    q.addEventListener('click', toggle);
+    q.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); } });
   });
 </script>
 </body>
