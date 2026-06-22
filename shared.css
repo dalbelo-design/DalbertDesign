@@ -242,7 +242,7 @@ section { padding: 100px var(--gutter); }
 /* ── PAGE HERO (interior pages) ── */
 .page-hero {
   background: var(--ink);
-  padding: calc(80px + clamp(3rem,8vw,5rem)) var(--gutter) clamp(6rem,12vw,8rem);
+  padding: calc(80px + 5vw) 5vw clamp(7rem,12vw,9rem);
   position: relative;
   overflow: hidden;
 }
@@ -256,11 +256,12 @@ section { padding: 100px var(--gutter); }
 @media (max-width: 640px) {
   .page-hero { padding-bottom: calc(80px + 2rem); }
 }
-.page-hero-inner { max-width: var(--max); margin: 0 auto; position: relative; z-index: 1; }
+.page-hero-inner { max-width: 1100px; margin: 0 auto; position: relative; z-index: 1; }
 .page-hero .section-eyebrow { color: var(--gold); }
 .page-hero .section-eyebrow::before { background: var(--gold); }
 .page-hero .section-title { color: var(--white); }
-.page-hero .section-body { color: rgba(255,255,255,.65); max-width: 560px; }
+.page-hero .section-body { color: rgba(255,255,255,.65); }
+.page-hero-bg { position:absolute;right:0;top:50%;transform:translateY(-50%);font-family:var(--font-display);font-weight:800;font-size:clamp(6rem,18vw,14rem);color:rgba(255,255,255,.04);line-height:1;pointer-events:none;white-space:nowrap;letter-spacing:-.04em; }
 
 /* ── DARK BAND ── */
 .band-dark {

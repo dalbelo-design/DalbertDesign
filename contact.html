@@ -8,6 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;0,9..144,800;0,9..144,900;1,9..144,700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="shared.css" />
   <style>
 
     /* ── TOKENS — exact match to leli.design ── */
@@ -165,13 +166,6 @@
     .fade-up.visible { opacity: 1; transform: translateY(0); }
 
     /* PAGE HERO (interior) */
-    .page-hero { background: var(--ink); padding: calc(80px + 5vw) 5vw 8vw; position: relative; overflow: hidden; }
-    .page-hero::after { content: ''; position: absolute; bottom: -1px; left: 0; right: 0; height: 80px; background: var(--paper); clip-path: ellipse(55% 100% at 50% 100%); }
-    .page-hero-inner { max-width: 1100px; margin: 0 auto; position: relative; z-index: 1; }
-    .page-hero .section-eyebrow { color: var(--gold); }
-    .page-hero .section-eyebrow::before { background: var(--gold); }
-    .page-hero .section-title { color: var(--white); }
-    .page-hero .section-body { color: rgba(255,255,255,.65); }
 
     /* RESPONSIVE */
     @media (max-width: 900px) {
